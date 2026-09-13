@@ -1,1 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Taluscom — learn digital marketing, discover remote AI opportunities, and connect with people exploring Africa.">
+<title>Taluscom | Learn. Work. Connect. Grow.</title>
+<style>
+:root{
+  --navy:#081b33; --blue:#0d4f8b; --gold:#f2b84b; --cream:#f7f9fc;
+  --text:#172033; --muted:#657086; --white:#fff; --line:#e6ebf2;
+  --shadow:0 18px 45px rgba(8,27,51,.10); --radius:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.35rem;font-weight:900;color:var(--navy)}
+.logo-mark{width:39px;height:39px;border-radius:12px;background:var(--navy);display:grid;place-items:center;color:var(--gold);font-weight:900}
+nav ul{display:flex;list-style:none;gap:25px;align-items:center}
+nav a{font-size:.94rem;font-weight:700;color:#465168}
+nav a:hover{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:12px;font-weight:800;border:1px solid transparent;cursor:pointer;transition:.2s}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(8,27,51,.2)}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-outline{border-color:#cfd7e3;color:var(--navy);background:#fff}
+.menu{display:none;background:none;border:0;font-size:1.6rem;color:var(--navy)}
+.hero{background:linear-gradient(135deg,#f7f9fc 0%,#edf5ff 52%,#fff8e9 100%);padding:88px 0 80px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:99px;background:#fff;border:1px solid var(--line);font-size:.82rem;font-weight:800;color:var(--blue);margin-bottom:18px}
+.hero h1{font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.02;letter-spacing:-.055em;color:var(--navy);max-width:700px}
+.hero h1 span{color:var(--blue)}
+.hero p{font-size:1.1rem;color:var(--muted);max-width:650px;margin:22px 0 30px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-card{background:var(--navy);color:#fff;border-radius:30px;padding:30px;box-shadow:var(--shadow);position:relative;min-height:390px;overflow:hidden}
+.hero-card:after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:rgba(242,184,75,.15);right:-70px;top:-70px}
+.africa{font-size:6rem;font-weight:1000;letter-spacing:-.08em;color:#fff;opacity:.12;position:absolute;right:25px;bottom:10px}
+.opportunity{position:relative;z-index:2;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);padding:18px;border-radius:18px;margin-bottom:13px}
+.opportunity small{color:#b8c8db}.opportunity strong{display:block;font-size:1.15rem;margin-top:4px}
+.section{padding:88px 0}
+.section.alt{background:var(--cream)}
+.section-head{text-align:center;max-width:720px;margin:0 auto 45px}
+.eyebrow{color:var(--blue);font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem}
+.section h2{font-size:clamp(2rem,4vw,3rem);line-height:1.08;color:var(--navy);margin:9px 0 14px}
+.section-head p{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 8px 25px rgba(8,27,51,.04);transition:.2s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.icon{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:#eef5fc;color:var(--blue);font-size:1.45rem;margin-bottom:20px}
+.card h3{color:var(--navy);margin-bottom:9px;font-size:1.25rem}
+.card p{color:var(--muted);font-size:.94rem}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.tag{font-size:.75rem;font-weight:800;padding:7px 9px;background:#f4f7fa;border-radius:8px;color:#4b5870}
+.card .btn{margin-top:8px;width:100%}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.feature-panel{background:var(--navy);color:#fff;border-radius:28px;padding:34px;box-shadow:var(--shadow)}
+.feature-panel h3{font-size:1.65rem;margin-bottom:10px}
+.feature-panel p{color:#c4d0df}
+.checks{list-style:none;margin-top:20px;display:grid;gap:12px}
+.checks li:before{content:"✓";color:var(--gold);font-weight:900;margin-right:10px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{padding:25px;border:1px solid var(--line);border-radius:18px;background:#fff}
+.step-no{font-size:.78rem;font-weight:900;color:var(--blue)}
+.step h3{margin:8px 0;color:var(--navy)}
+.step p{font-size:.9rem;color:var(--muted)}
+.chat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.person{border:1px solid var(--line);border-radius:18px;padding:22px;background:#fff}
+.avatar{width:55px;height:55px;border-radius:50%;background:#eaf2fa;display:grid;place-items:center;font-weight:900;color:var(--blue);margin-bottom:13px}
+.person strong{display:block;color:var(--navy)} .person span{font-size:.83rem;color:var(--muted)}
+.cta{padding:70px 0}.cta-box{background:linear-gradient(120deg,var(--navy),#0d4f8b);color:#fff;border-radius:30px;padding:55px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.cta-box h2{font-size:2.5rem;line-height:1.1;margin-bottom:10px}.cta-box p{color:#c9d7e8;max-width:620px}
+.faq{max-width:800px;margin:auto;display:grid;gap:12px}
+details{border:1px solid var(--line);border-radius:14px;padding:17px 20px;background:#fff}
+summary{font-weight:800;color:var(--navy);cursor:pointer}
+details p{color:var(--muted);padding-top:10px}
+footer{background:#061425;color:#d7e0eb;padding:55px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:35px}
+footer h3,footer h4{color:#fff;margin-bottom:13px} footer p,footer a{color:#9eafc3;font-size:.9rem}
+footer a{display:block;margin:7px 0}.copy{border-top:1px solid rgba(255,255,255,.1);margin-top:35px;padding-top:20px;font-size:.8rem;color:#8193a9}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.58);display:none;place-items:center;z-index:2000;padding:20px}
+.modal.show{display:grid}.modal-box{background:#fff;border-radius:22px;padding:30px;max-width:500px;width:100%;position:relative}
+.close{position:absolute;right:17px;top:12px;border:0;background:none;font-size:1.5rem;cursor:pointer}
+form{display:grid;gap:13px;margin-top:20px}input,select{padding:13px;border:1px solid #ccd5e1;border-radius:10px;font:inherit;width:100%}
+@media(max-width:900px){
+ nav ul{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;padding:20px;flex-direction:column;box-shadow:0 15px 30px rgba(0,0,0,.08)}
+ nav ul.open{display:flex}.menu{display:block}
+ .hero-grid,.feature-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.chat-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+ .hero{padding:65px 0}.hero-card{min-height:auto}.section{padding:65px 0}.cards,.steps,.chat-grid,.footer-grid{grid-template-columns:1fr}.cta-box{padding:35px 25px;display:block}.cta-box .btn{margin-top:20px}.hero h1{font-size:2.7rem}
+}
+</style>
+</head>
+<body>
 
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home"><span class="logo-mark">T</span> TALUSCOM</a>
+    <nav>
+      <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
+      <ul id="navList">
+        <li><a href="#digital">Digital Marketing</a></li>
+        <li><a href="#ai">AI Jobs</a></li>
+        <li><a href="#connect">Global Connections</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a class="btn btn-primary" href="#" data-open="signup">Sign Up</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+<div class="container hero-grid">
+  <div>
+    <div class="badge">🌍 Built for Africa • Connected to the world</div>
+    <h1>Your Digital Future <span>Starts Here.</span></h1>
+    <p>Learn digital skills, discover remote AI opportunities, and connect with people around the world who want to experience the beauty and diversity of Africa.</p>
+    <div class="actions">
+      <a href="#opportunities" class="btn btn-primary">Explore Opportunities →</a>
+      <a href="#" class="btn btn-outline" data-open="signup">Create Your Account</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="opportunity"><small>LEARNING PATH</small><strong>Digital Marketing</strong><span>Build practical online business skills.</span></div>
+    <div class="opportunity"><small>REMOTE OPPORTUNITY</small><strong>AI Training Tasks</strong><span>Find eligible human-feedback and data tasks.</span></div>
+    <div class="opportunity"><small>GLOBAL CONNECTION</small><strong>Explore Africa Together</strong><span>Have meaningful conversations across borders.</span></div>
+    <div class="africa">AFRICA</div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="opportunities">
+<div class="container">
+  <div class="section-head">
+    <div class="eyebrow">Three ways to grow</div>
+    <h2>Choose Your Taluscom Path</h2>
+    <p>Whether you want to learn, work remotely, or build international connections, start with the path that fits you.</p>
+  </div>
+  <div class="cards">
+    <article class="card" id="digital">
+      <div class="icon">📣</div><h3>Digital Marketing</h3>
+      <p>Develop practical skills for promoting brands, products and services online.</p>
+      <div class="tags"><span class="tag">Social Media</span><span class="tag">SEO</span><span class="tag">Content</span><span class="tag">Ads</span></div>
+      <a href="#digital-details" class="btn btn-primary">Start Learning</a>
+    </article>
+    <article class="card" id="ai">
+      <div class="icon">🤖</div><h3>Remote AI Training Jobs</h3>
+      <p>Explore legitimate opportunities involving human feedback, annotation, evaluation and data tasks.</p>
+      <div class="tags"><span class="tag">Data Annotation</span><span class="tag">AI Evaluation</span><span class="tag">Transcription</span><span class="tag">Testing</span></div>
+      <a href="#ai-details" class="btn btn-primary">Explore AI Jobs</a>
+    </article>
+    <article class="card" id="connect">
+      <div class="icon">🌍</div><h3>Global Connections</h3>
+      <p>Connect with approved international users interested in African culture, travel and conversation.</p>
+      <div class="tags"><span class="tag">Tourists</span><span class="tag">Travelers</span><span class="tag">Veterans</span><span class="tag">Culture</span></div>
+      <a href="#connect-details" class="btn btn-primary">Join Conversations</a>
+    </article>
+  </div>
+</div>
+</section>
+
+<section class="section alt" id="digital-details">
+<div class="container feature-grid">
+  <div>
+    <div class="eyebrow">01 — Digital Marketing</div>
+    <h2>Turn Digital Skills Into Real-World Experience.</h2>
+    <p>Learn the foundations and practical skills businesses use every day to reach customers online.</p>
+    <div class="tags">
+      <span class="tag">Social Media Management</span><span class="tag">Content Creation</span><span class="tag">SEO</span><span class="tag">Email Marketing</span><span class="tag">Copywriting</span><span class="tag">Analytics</span>
+    </div>
+  </div>
+  <div class="feature-panel">
+    <h3>Learning Dashboard</h3><p>Track your progress and build your digital skill profile.</p>
+    <ul class="checks"><li>Structured lessons</li><li>Practical assignments</li><li>Progress tracking</li><li>Skill profile</li></ul>
+  </div>
+</div>
+</section>
+
+<section class="section" id="ai-details">
+<div class="container">
+  <div class="section-head"><div class="eyebrow">02 — Remote AI Opportunities</div><h2>Help Improve the AI Systems of Tomorrow.</h2><p>Browse opportunities that may involve human feedback and data work. Availability and payment depend on each provider.</p></div>
+  <div class="cards">
+    <div class="card"><div class="icon">🏷️</div><h3>Data Annotation</h3><p>Label and categorize data according to project guidelines.</p></div>
+    <div class="card"><div class="icon">🧠</div><h3>AI Response Evaluation</h3><p>Review AI-generated responses against defined quality criteria.</p></div>
+    <div class="card"><div class="icon">🎙️</div><h3>Audio & Speech Tasks</h3><p>Participate in eligible transcription, recording or speech-data projects.</p></div>
+  </div>
+</div>
+</section>
+
+<section class="section alt" id="connect-details">
+<div class="container">
+  <div class="section-head"><div class="eyebrow">03 — Global Connections</div><h2>Share Africa With the World.</h2><p>Have friendly, respectful conversations with approved people interested in African culture, travel and everyday life.</p></div>
+  <div class="chat-grid">
+    <div class="person"><div class="avatar">👴</div><strong>Elderly People</strong><span>Friendly conversation and cultural exchange.</span></div>
+    <div class="person"><div class="avatar">🎖️</div><strong>War Veterans</strong><span>Stories, history and cultural conversations.</span></div>
+    <div class="person"><div class="avatar">✈️</div><strong>Tourists</strong><span>People preparing to explore Africa.</span></div>
+    <div class="person"><div class="avatar">🌍</div><strong>Travelers</strong><span>Discover destinations, food and traditions.</span></div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="how">
+<div class="container">
+<div class="section-head"><div class="eyebrow">Simple process</div><h2>How Taluscom Works</h2></div>
+<div class="steps">
+  <div class="step"><div class="step-no">01</div><h3>Create Your Profile</h3><p>Tell Taluscom about your skills and interests.</p></div>
+  <div class="step"><div class="step-no">02</div><h3>Choose Your Path</h3><p>Select learning, AI opportunities, or global connections.</p></div>
+  <div class="step"><div class="step-no">03</div><h3>Learn & Participate</h3><p>Develop skills, apply for opportunities or connect responsibly.</p></div>
+  <div class="step"><div class="step-no">04</div><h3>Grow</h3><p>Build experience, improve skills and discover new opportunities.</p></div>
+</div>
+</div>
+</section>
+
+<section class="cta" id="about">
+<div class="container">
+<div class="cta-box">
+<div><h2>Ready to start?</h2><p>Join Taluscom and take your next step toward learning, remote opportunities and meaningful global connections.</p></div>
+<a href="#" class="btn btn-gold" data-open="signup">Join Taluscom</a>
+</div>
+</div>
+</section>
+
+<section class="section alt" id="faq">
+<div class="container">
+<div class="section-head"><div class="eyebrow">FAQ</div><h2>Frequently Asked Questions</h2></div>
+<div class="faq">
+<details><summary>What is Taluscom?</summary><p>Taluscom is a digital platform combining digital marketing education, remote AI opportunity discovery and international cultural connections.</p></details>
+<details><summary>Do I need previous AI experience?</summary><p>Some opportunities may be suitable for beginners, while others require specific skills. Always check the eligibility requirements of each opportunity.</p></details>
+<details><summary>Does Taluscom guarantee income?</summary><p>No. Taluscom should never promise guaranteed earnings. Availability, eligibility, workload and compensation vary by opportunity and provider.</p></details>
+<details><summary>How does Taluscom protect users?</summary><p>Use verification, reporting, blocking, privacy controls, moderation and clear community rules to promote safer interactions.</p></details>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><div class="logo" style="color:#fff"><span class="logo-mark">T</span> TALUSCOM</div><p style="margin-top:15px">Learn. Work. Connect. Grow.</p></div>
+<div><h4>Platform</h4><a href="#digital">Digital Marketing</a><a href="#ai">AI Opportunities</a><a href="#connect">Global Connections</a></div>
+<div><h4>Company</h4><a href="#about">About</a><a href="#how">How It Works</a><a href="#faq">FAQ</a></div>
+<div><h4>Safety</h4><a href="#">Privacy Policy</a><a href="#">Terms & Conditions</a><a href="#">Community Guidelines</a></div>
+</div>
+<div class="copy">© <span id="year"></span> Taluscom. All rights reserved.</div>
+</div>
+</footer>
+
+<div class="modal" id="signupModal">
+<div class="modal-box">
+<button class="close" id="closeModal">×</button>
+<div class="eyebrow">Join Taluscom</div><h2 style="color:var(--navy);margin-top:7px">Create your account</h2>
+<form id="signupForm">
+<input type="text" placeholder="Full name" required>
+<input type="email" placeholder="Email address" required>
+<select required><option value="">Choose your main interest</option><option>Digital Marketing</option><option>Remote AI Opportunities</option><option>Global Connections</option></select>
+<button class="btn btn-primary" type="submit">Create Account</button>
+</form>
+<p id="formMsg" style="margin-top:12px;color:var(--blue);font-weight:700"></p>
+</div>
+</div>
+
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const navList=document.getElementById('navList');
+menuBtn.addEventListener('click',()=>navList.classList.toggle('open'));
+document.querySelectorAll('#navList a').forEach(a=>a.addEventListener('click',()=>navList.classList.remove('open')));
+
+const modal=document.getElementById('signupModal');
+document.querySelectorAll('[data-open="signup"]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();modal.classList.add('show')}));
+document.getElementById('closeModal').onclick=()=>modal.classList.remove('show');
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('show')});
+document.getElementById('signupForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  document.getElementById('formMsg').textContent='Demo registration received. Connect this form to your backend/database to create real accounts.';
+});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
